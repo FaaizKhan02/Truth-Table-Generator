@@ -1,0 +1,353 @@
+import java.util.*;
+class TruthTableGenerator{
+    static void And(){
+        System.out.println("A | B | A AND B");
+        System.out.println("---------------");
+        System.out.println("T | T | T");
+        System.out.println("T | F | F");
+        System.out.println("F | T | F");
+        System.out.println("F | F | F");}
+    static void Or(){
+        System.out.println("A | B | A OR B");
+        System.out.println("--------------");
+        System.out.println("T | T | T");
+        System.out.println("T | F | T");
+        System.out.println("F | T | T");
+        System.out.println("F | F | F");}
+    static void Nor(){
+        System.out.println("A | B | A NOR B");
+        System.out.println("--------------");
+        System.out.println("T | T | F");
+        System.out.println("T | F | F");
+        System.out.println("F | T | F");
+        System.out.println("F | F | T");}
+    static void Not(){
+        System.out.println("A | NOT A");
+        System.out.println("---------");
+        System.out.println("T | F");
+        System.out.println("F | T");}
+    static void Xor(){
+        System.out.println("A | B | A XOR B");
+        System.out.println("---------------");
+        System.out.println("T | T | F");
+        System.out.println("T | F | T");
+        System.out.println("F | T | T");
+        System.out.println("F | F | F");}
+    static void Xnor(){
+        System.out.println("A | B | A XNOR B");
+        System.out.println("----------------");
+        System.out.println("T | T | T");
+        System.out.println("T | F | F");
+        System.out.println("F | T | F");
+        System.out.println("F | F | T");}
+    static void Nand(){
+        System.out.println("A | B | A NAND B");
+        System.out.println("----------------");
+        System.out.println("T | T | F");
+        System.out.println("T | F | T");
+        System.out.println("F | T | T");
+        System.out.println("F | F | T");}
+    static void Implies(){
+        System.out.println("A | B | A --> B");
+        System.out.println("-------------");
+        System.out.println("T | T | T");
+        System.out.println("T | F | F");
+        System.out.println("F | T | T");
+        System.out.println("F | F | T");}
+    static void IfandOnlyIf(){
+        System.out.println("A | B | A <--> B");
+        System.out.println("----------------");
+        System.out.println("T | T | T");
+        System.out.println("T | F | F");
+        System.out.println("F | T | F");
+        System.out.println("F | F | T");}
+    static void printTruthTable(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Which truth table would you like to print? ");
+        System.out.println("1. AND");
+        System.out.println("2. OR");
+        System.out.println("3. NOT");
+        System.out.println("4. XOR");
+        System.out.println("5. XNOR");
+        System.out.println("6. NAND");
+        System.out.println("7. MOR");
+        System.out.println("8. IMPLIES");
+        System.out.println("9. IF And OnlyIF");
+        System.out.print("Select an option: ");
+        int choice=s.nextInt();
+        switch(choice){
+            case 1:
+                And();
+                break;
+            case 2:
+                Or();
+                break;
+            case 3:
+                Not();
+                break;
+            case 4:
+                Xor();
+                break;
+            case 5:
+                Xnor();
+                break;
+            case 6:
+                Nand();
+                break;
+            case 7:
+                Nor();
+                break;
+            case 8:
+                Implies();
+                break;
+            case 9:
+                IfandOnlyIf();
+                break;
+            default:
+                System.out.println("Incorrect choice.");
+                break;
+        }}
+    static void evaluateLogicGates(){
+        Scanner s=new Scanner(System.in);
+        while(true){
+            System.out.println("Choose a logic gate to evaluate :");
+            System.out.println("1. AND");
+            System.out.println("2. OR");
+            System.out.println("3. NOT");
+            System.out.println("4. XOR");
+            System.out.println("5. XNOR");
+            System.out.println("6. NAND");
+            System.out.println("7. NOR");
+            System.out.println("8. IMPLIES");
+            System.out.println("9. IF and Only IF");
+            System.out.println("10. Exit");
+            System.out.print("Your choice: ");
+            int choice=s.nextInt();
+            if (choice==10){
+                System.out.println("Returning to the main menu..........");
+                return;}
+            Scanner sc=new Scanner(System.in);
+            switch(choice){
+                case 1:
+                    System.out.println("Enter first (True/False):");
+                    String a=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String b=sc.next();
+                    if(a.equals("True") && b.equals("True")){
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    break;
+                case 2:
+                    System.out.println("Enter first (True/False):");
+                    String c=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String d=sc.next();
+                    if(c.equals("False") && d.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    break;
+                case 3:
+                    System.out.println("Enter first (True/False):");
+                    String e=sc.next();
+                    if (e.equals("True")){
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    if (e.equals("False")) {
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    break;
+                case 4:
+                    System.out.println("Enter first (True/False):");
+                    String f=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String g=sc.next();
+                    if(f.equals("False") && g.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("False");break;}
+                    if(f.equals("True") && g.equals("True")){
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    break;
+                case 5:
+                    System.out.println("Enter first (True/False):");
+                    String h=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String i=sc.next();
+                    if(h.equals("False") && i.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    else if(h.equals("True") && i.equals("True")){
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    else{System.out.println("Output:");
+                        System.out.println("False");}
+                    break;
+                case 6:
+                    System.out.println("Enter first (True/False):");
+                    String j=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String k=sc.next();
+                    if(j.equals("True") && k.equals("True")){
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    break;
+                case 7:
+                    System.out.println("Enter first (True/False):");
+                    String l=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String m=sc.next();
+                    if(l.equals("False") && m.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    break;
+                case 8:
+                    System.out.println("Enter first (True/False):");
+                    String n=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String o=sc.next();
+                    if(n.equals("True") && o.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    break;
+                case 9:
+                    System.out.println("Enter first (True/False):");
+                    String p=sc.next();
+                    System.out.println("Enter second (True/False):");
+                    String q=sc.next();
+                    if(p.equals("False") && q.equals("False")){
+                        System.out.println("Output:");
+                        System.out.println("True");break;}
+                    if(p.equals("True") && q.equals("True")) {
+                        System.out.println("Output:");
+                        System.out.println("True");}
+                    else{
+                        System.out.println("Output:");
+                        System.out.println("False");}
+                    break;
+                default:
+                    System.out.println("Incorrect choice.");}}}
+    static void truthTableGame(){
+        Scanner sc=new Scanner(System.in);
+        while(true){
+            System.out.println("Choose difficulty level:");
+            System.out.println("1. Easy");
+            System.out.println("2. Medium");
+            System.out.println("3. Hard");
+            System.out.println("4. Exit");
+            System.out.print("Select One from Above: ");
+            int level=sc.nextInt();
+            int count=0;
+            switch(level){
+                case 1:
+                    count=0;
+                    System.out.println("Give answer in form of (True/False):-");
+                    System.out.println("Result of A AND B when A=True and B=False?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A OR B when A=False and B=False?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of NOT A when A=True?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("You got "+count+" correct out of 3.");
+                    break;
+                case 2:
+                    count=0;
+                    System.out.println("Give answer in form of (True/False):-");
+                    System.out.println("Result of A NOR B when A=False and B=True?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A NAND B when A=True and B=False?");
+                    if (sc.next().equals("True")){count++;}
+                    System.out.println("Result of A XOR B when A=True and B=True?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A NOR B when A=False and B=False?");
+                    if (sc.next().equals("True")){count++;}
+                    System.out.println("Result of A XNOR B when A=True and B=False?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("You got "+count+" correct out of 5.");
+                    break;
+                case 3:
+                    count=0;
+                    System.out.println("Give answer in form of (True/False):-");
+                    System.out.println("Result of A-->B when A=True and B=False?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A-->B when A=False and B=True?");
+                    if (sc.next().equals("True")){count++;}
+                    System.out.println("Result of A<-->B when A=True and B=True?");
+                    if (sc.next().equals("True")){count++;}
+                    System.out.println("Result of A<-->B when A=False and B=False?");
+                    if (sc.next().equals("True")){count++;}
+                    System.out.println("Result of A XNOR B when A=False and B=True?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A NAND B when A=True and B=True?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("Result of A NOR B when A=True and B=False?");
+                    if (sc.next().equals("False")){count++;}
+                    System.out.println("You got "+count+" correct out of 7.");
+                    break;
+                case 4:
+                    System.out.println("Returning to main menu...");
+                    sc.close();
+                    return;
+                default:
+                    System.out.println("Incorrect choice! Please try again.");}}}
+    public static void main(String[] args){
+            Scanner s=new Scanner(System.in);
+        System.out.println("***-------------> Truth Table Generator <-----------***");
+            while (true) {
+                System.out.println("----------MAIN MANU-----------");
+                System.out.println("1. Print Truth Tables ");
+                System.out.println("2. Ask Logic Gates ");
+                System.out.println("3. Truth Table Game ");
+                System.out.println("4. Exit ");
+                System.out.print("Select an option given above: ");
+                int choice;
+                try {
+                    choice = s.nextInt();
+                } catch (NoSuchElementException e) {
+                    System.out.println("No input provided. Exiting.");
+                    return;
+                }
+                switch (choice) {
+                    case 1:
+                        printTruthTable();
+                        break;
+                    case 2:
+                        evaluateLogicGates();
+                        break;
+                    case 3:
+                        truthTableGame();
+                        break;
+                    case 4:
+                        System.out.println("Closing program.............");
+                        System.out.println("Program closed.");
+                        return;
+                    default:
+                        System.out.println("Incorrect choice. Please try again.");}}}}
+------------------------------------------------------------------------------------------------------------
+EXPLANATION:
+This program is a Truth Table Generator that serves multiple purposes: displaying truth tables, evaluating logic gate operations, and running a logic gate-based quiz game. The program uses Java's Scanner class to handle user input and provides a console menu to navigate its three primary functionalities.
+
+Printing Truth Tables: The program includes methods for each logic gate (e.g., And, Or, Not, etc.), which output a hardcoded truth table for the corresponding operation. The printTruthTable method presents a menu to select a logic gate and calls the respective method based on the user's choice using a switch statement.
+
+Evaluating Logic Gates: The evaluateLogicGates method allows the user to interactively compute the output of various logic gates. Based on the user's menu selection, it prompts for input values (e.g., "True" or "False") and computes the result using conditional checks (if-else) to simulate gate behavior.
+
+Truth Table Game: The truthTableGame method quizzes the user on logic gate operations. The game has three difficulty levels (Easy, Medium, Hard), each posing a set of predefined questions about the behavior of logic gates. The user's answers are checked against the expected results, and their score is displayed at the end of each round.
+
+The main method serves as the entry point. It provides a top-level menu allowing users to select one of the three features or exit the program. The program uses try-catch to handle input exceptions, ensuring the user experience is robust. Methods like printTruthTable, evaluateLogicGates, and truthTableGame are called in response to the user's main menu selection. The program uses multiple switch statements and nested conditional checks for logic gate operations and menu navigation. Overall, the code combines hardcoded outputs, interactive evaluation, and a gamified quiz to educate users about logic gates and truth tables.
